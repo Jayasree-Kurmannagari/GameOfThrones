@@ -8,7 +8,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #a9b4bd;
-    /* font-family: 'Metamorphous', cursive; */
 }
 
 .container .menu-icon {
@@ -191,9 +190,9 @@ body {
     font-size: 1.5rem;
     padding: 13px 25px;
     border-radius: 30px;
-    /* background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4); */
+    
     background: linear-gradient(90deg, #200122, #aa4b6b, #6b6b83, #164a52, #200122);
-    /*  background: linear-gradient(90deg, rgb(6, 2, 75), rgba(9, 9, 121, 1), rgb(82, 86, 87), rgb(6, 2, 75)); */
+  
     background-size: 400%;
     position: absolute;
     z-index: 1;
@@ -316,7 +315,6 @@ body {
 }
 
 .bview p {
-    /* padding: 0 20px; */
     font-size: 1.25rem;
     word-wrap: break-word;
     max-width: 250px;

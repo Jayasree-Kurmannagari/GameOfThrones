@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #a9b4bd;
+    /* font-family: 'Metamorphous', cursive; */
+}
+
+.container .menu-icon {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    font-size: 30px;
+    right: 60px;
+    top: 58px;
+    border: 1px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3;
+    background-color: white;
+}
+
+.dots {
+    position: absolute;
+    font-size: 4rem;
+    top: -20px;
+    right: 7px;
+    opacity: 0;
+    transition: 0.4s;
+    color: rgb(15, 15, 95);
+}
+
+.icon {
+    position: relative;
+    top: 10px;
+    right: -10px;
+}
+
+.menu-container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.change~.menu-container {
+    visibility: visible;
+}
+
+.menu-container>div {
+    background: rgba(47, 79, 79, 0.3);
+    border-radius: 50%;
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+}
+
+.change~.menu-container>div {
+    transform: scale(1);
+    transition-duration: 1s;
+}
+
+.menu-container>div>div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.change~.menu-container>div>div {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.menu-content a {
+    text-decoration: none;
+    transition: color 0.4s ease;
+    font-size: 1.75rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Metamorphous', cursive;
+}
+
+.menu-content li {
+    padding: 20px;
+    list-style: none;
+}
+
+.change img {
+    visibility: hidden;
+}
+
+.change .dots {
+    opacity: 1;
+}
+
+#showcase {
+    background-image: url("/images/white-walker.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+@media only screen and (max-width:500px) {
+    #showcase {
+        background-image: url("/images/white-walker1.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+}
+
+.images {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 10px 10px 10px 5px gray, 0px 10px 10px 5px gray;
+}
+
+.main-image {
+    width: 200px;
+    margin: 10px;
+}
+
+.back {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 1s;
+    background-color: black;
+    width: 200px;
+    height: 355px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.houses {
+    padding-top: 70px;
+}
+
+.houses h2 {
+    text-align: center;
+    font-family: 'Metamorphous', cursive;
+    color: rgb(3, 3, 105);
+    font-size: 2.5rem;
+}
+
+.front {
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 1s;
+}
+
+.inner:hover .front {
+    transform: rotateX(-180deg);
+}
+
+.inner:hover .back {
+    transform: rotateX(0deg);
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 13px 25px;
+    border-radius: 30px;
+    /* background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4); */
+    background: linear-gradient(90deg, #200122, #aa4b6b, #6b6b83, #164a52, #200122);
+    /*  background: linear-gradient(90deg, rgb(6, 2, 75), rgba(9, 9, 121, 1), rgb(82, 86, 87), rgb(6, 2, 75)); */
+    background-size: 400%;
+    position: absolute;
+    z-index: 1;
+    font-family: 'Metamorphous', cursive;
+}
+
+.button:hover {
+    animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #200122, #aa4b6b, #6b6b83, #164a52, #200122);
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.button:hover:before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+}
+
+.kingdoms h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(82, 7, 7);
+    font-family: 'Metamorphous', cursive;
+}
+
+.sigils {
+    max-width: 90%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.each-sigil {
+    position: relative;
+    margin: 20px 0;
+    width: 250px;
+    height: 250px;
+    background: rgba(75, 72, 72, 0.55);
+    transform-style: preserve-3d;
+    transform: perspective(2000px);
+    transition: 1s;
+    box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.each-sigil:hover,
+.each-sigil:active {
+    transform: perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 101;
+    cursor: pointer;
+}
+
+.each-sigil .fview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    transform-origin: left;
+    z-index: 1;
+    transition: 1s;
+}
+
+.each-sigil .fview img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.each-sigil:hover .fview,
+.each-sigil:active .fview {
+    transform: rotateY(-135deg);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.each-sigil .bview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bview h5 {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    margin-top: -30px;
+    color: rgb(254, 254, 255);
+    text-align: center;
+}
+
+.bview p {
+    /* padding: 0 20px; */
+    font-size: 1.25rem;
+    word-wrap: break-word;
+    max-width: 250px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.bview p::first-letter {
+    font-size: 1.55rem;
+    color: rgb(3, 9, 66);
+    font-weight: bold;
+}
+
+.each-sigil .bview h5 span {
+    font-family: 'Metamorphous', cursive;
+    font-size: 1.9rem;
+    color: rgb(3, 9, 66);
+}
